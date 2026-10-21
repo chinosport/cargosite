@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>genero</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- FONDO IZQUIERDO -->
+<div class="bg">
+  <video src="assets/fondo.mp4" autoplay muted loop playsinline preload="auto"></video>
+</div>
+
+<!-- ESCRITORIO CREMA -->
+<main class="desk" id="desk">
+
+  <div class="ico logo" data-id="logo">
+    <img src="assets/logo.png" alt="genero" draggable="false">
+  </div>
+
+  <button type="button" class="ico" data-id="about" data-open="about">
+    <span class="art">
+      <svg viewBox="0 0 100 120" aria-hidden="true">
+        <path d="M16 6h48l22 22v86H16z" fill="#f6f6f4" stroke="#d6d6d2" stroke-width="1.5"/>
+        <path d="M64 6v22h22z" fill="#e4e4e0"/>
+        <text x="26" y="62" font-family="Georgia,serif" font-size="34" font-weight="700" fill="#e0533d">“</text>
+        <rect x="46" y="48" width="30" height="4" rx="2" fill="#e0533d"/>
+        <rect x="26" y="70" width="50" height="4" rx="2" fill="#e0533d"/>
+        <rect x="26" y="82" width="50" height="4" rx="2" fill="#e0533d"/>
+      </svg>
+    </span>
+    <span class="cap">About me.rtf</span>
+  </button>
+
+  <button type="button" class="ico" data-id="archivo" data-open="cv">
+    <span class="art">
+      <svg viewBox="0 0 100 120" aria-hidden="true">
+        <path d="M16 6h48l22 22v86H16z" fill="#f4f4f3" stroke="#d6d6d2" stroke-width="1.5"/>
+        <path d="M64 6v22h22z" fill="#e0e0dd"/>
+        <rect x="28" y="38" width="22" height="18" rx="2" fill="#8d8d8a"/>
+        <rect x="56" y="40" width="18" height="4" rx="2" fill="#b9b9b6"/>
+        <rect x="56" y="50" width="18" height="4" rx="2" fill="#b9b9b6"/>
+        <rect x="28" y="64" width="46" height="4" rx="2" fill="#b9b9b6"/>
+        <text x="50" y="102" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" fill="#9a9a97">PDF</text>
+      </svg>
+    </span>
+    <span class="cap">ARCHIVO</span>
+  </button>
+
+  <button type="button" class="ico" data-id="work" data-open="work">
+    <span class="art">
+      <svg viewBox="0 0 130 100" aria-hidden="true">
+        <path d="M6 14q0-8 8-8h32l10 10h60q8 0 8 8v62q0 8-8 8H14q-8 0-8-8z" fill="#5aaee6"/>
+        <rect x="6" y="28" width="118" height="64" rx="8" fill="#82c6f2"/>
+        <rect x="6" y="28" width="118" height="10" rx="5" fill="#a8d9f7"/>
+      </svg>
+    </span>
+    <span class="cap">Selected Work</span>
+  </button>
+
+  <div class="ico static" data-id="sticker">
+    <span class="art">
+      <svg viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="46" fill="#ffffff" stroke="#2a5db0" stroke-width="5"/>
+        <circle cx="50" cy="50" r="38" fill="none" stroke="#2a5db0" stroke-width="1.5"/>
+        <g transform="rotate(-12 50 50)" font-family="Arial Black,Arial,sans-serif" font-weight="900" fill="#2a5db0" text-anchor="middle">
+          <text x="50" y="47" font-size="19">genero</text>
+          <text x="50" y="66" font-size="19">inside</text>
+        </g>
+      </svg>
+    </span>
+    <span class="cap">sticker.gif</span>
+  </div>
+
+  <button type="button" class="ico" data-id="exp" data-open="exp">
+    <span class="art">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <rect x="10" y="6" width="100" height="78" rx="7" fill="#e6e2cc" stroke="#bdb89c" stroke-width="1.5"/>
+        <rect x="20" y="16" width="80" height="54" rx="3" fill="#1f3fc4"/>
+        <rect x="46" y="26" width="28" height="4" fill="#ffffff"/>
+        <rect x="28" y="38" width="64" height="3" fill="#9fb0ff"/>
+        <rect x="28" y="46" width="52" height="3" fill="#9fb0ff"/>
+        <rect x="28" y="54" width="58" height="3" fill="#9fb0ff"/>
+        <circle cx="30" cy="77" r="2.5" fill="#bdb89c"/>
+        <circle cx="39" cy="77" r="2.5" fill="#bdb89c"/>
+        <circle cx="48" cy="77" r="2.5" fill="#bdb89c"/>
+        <path d="M42 84h36l8 20H34z" fill="#d6d1b6"/>
+        <rect x="26" y="104" width="68" height="8" rx="4" fill="#cfc9ac"/>
+      </svg>
+    </span>
+    <span class="cap">Experiments</span>
+  </button>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer class="foot">
+  Cargo® Demonstration Site No. 230041 &nbsp; &nbsp;<span id="clock"></span>&nbsp; &nbsp;<u><a href="mailto:sam@cargo.site">Email</a></u>, <u><a href="https://www.instagram.com/cargoworld/" target="_blank" rel="noopener">Instagram</a></u>
+</footer>
+
+
+<!-- PHOTO BOOTH -->
+<div class="photobooth" id="photobooth">
+  <div class="pb-titlebar">
+    <div class="pb-traffic"><span class="pb-dot pb-red"></span><span class="pb-dot pb-yellow"></span><span class="pb-dot pb-green"></span></div>
+    <span>Photo Booth</span>
+  </div>
+  <div class="pb-screen">
+    <video src="assets/photobooth.mp4" autoplay muted loop playsinline preload="auto"></video>
+  </div>
+  <div class="pb-controls">
+    <div class="pb-mode"><span>▦</span><span>▣</span></div>
+    <div class="pb-shutter"></div>
+    <div class="pb-effects">Effects</div>
+    <div class="pb-resize-handle" title="Cambiar tamaño"></div>
+  </div>
+</div>
+
+
+<!-- OVERLAY: ABOUT ME -->
+<div class="ov" id="ov-about" aria-hidden="true">
+  <div class="win win-about" data-move>
+    <div class="win-bar">
+      <button type="button" class="dots" data-close aria-label="Cerrar"><i class="r"></i><i class="y"></i><i class="g"></i></button>
+      <span>yo</span>
+    </div>
+    <h2>Hello.<br><br>
+      Thanks for stopping by.<br><br>
+      Feel free to send me an email: <u><a href="mailto:sam@cargo.site">sam@cargo.site</a></u><br><br>
+      Take care,<br><br>
+      Sam <span class="blink">|</span></h2>
+  </div>
+</div>
+
+<!-- OVERLAY: SELECTED WORK -->
+<div class="ov" id="ov-work" aria-hidden="true">
+  <div class="win win-wide" data-move>
+    <div class="win-bar">
+      <button type="button" class="dots" data-close aria-label="Cerrar"><i class="r"></i><i class="y"></i><i class="g"></i></button>
+      <span>Selected Work</span>
+    </div>
+    <div class="proj-list"></div>
+  </div>
+</div>
+
+<!-- OVERLAY: EXPERIMENTS -->
+<div class="ov" id="ov-exp" aria-hidden="true">
+  <div class="win win-exp" data-move>
+    <div class="win-bar">
+      <button type="button" class="dots" data-close aria-label="Cerrar"><i class="r"></i><i class="y"></i><i class="g"></i></button>
+      <span>Experiments</span>
+    </div>
+    <div class="exp-body"></div>
+  </div>
+</div>
+
+<!-- OVERLAY: REVISTA (ARCHIVO) -->
+<div class="ov" id="ov-cv" aria-hidden="true">
+  <div class="cv-wrap" data-move>
+    <div class="cv-stage">
+      <button class="cv-nav cv-prev" type="button" aria-label="Página anterior">‹</button>
+      <div class="cv-book"></div>
+      <button class="cv-nav cv-next" type="button" aria-label="Página siguiente">›</button>
+    </div>
+    <div class="cv-foot"></div>
+  </div>
+</div>
+
+<!-- ZOOM DE IMÁGENES -->
+<div class="lb" id="lb"><img src="" alt=""></div>
+
+<script src="script.js"></script>
+</body>
+</html>

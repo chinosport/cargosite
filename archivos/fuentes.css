@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+@font-face { font-display: block; font-family: "Neue Haas Grotesk"; src: url("https://type.cargo.site/files/NeueHaasGroteskText-Regular.woff") format("woff"); font-style: normal; font-weight: normal; }
+
+@font-face { font-display: block; font-family: "Neue Haas Grotesk"; src: url("https://type.cargo.site/files/NeueHaasGroteskText-Bold.woff") format("woff"); font-style: normal; font-weight: bold; }
+
+@font-face { font-display: block; font-family: "Neue Haas Grotesk"; src: url("https://type.cargo.site/files/NeueHaasGroteskText-Italic.woff") format("woff"); font-style: italic; font-weight: normal; }
+
+@font-face { font-display: block; font-family: "Neue Haas Grotesk"; src: url("https://type.cargo.site/files/NeueHaasGroteskText-BoldItalic.woff") format("woff"); font-style: italic; font-weight: bold; }
+
+@font-face { font-display: block; font-family: "Neue Haas Grotesk"; src: url("https://type.cargo.site/files/NeueHaasGroteskText-Medium.woff") format("woff"); font-style: normal; font-weight: 500; }
+
+@font-face { font-display: block; font-family: "Neue Haas Grotesk"; src: url("https://type.cargo.site/files/NeueHaasGroteskText-MediumItalic.woff") format("woff"); font-style: italic; font-weight: 500; }
+
+@font-face { font-display: block; font-family: "Diatype Variable"; src: url("https://type.cargo.site/files/Cargo-DiatypePlusVariable.woff2") format("woff2-variations"); font-style: normal; font-weight: 200 1000; }
+
+@font-face { font-display: block; font-family: "Diatype Variable"; src: url("https://type.cargo.site/files/Cargo-DiatypePlusVariable.woff2") format("woff2-variations"); font-style: normal; font-weight: 200 1000; }
+
+@font-face { font-display: block; font-family: "Diatype Variable"; src: url("https://type.cargo.site/files/Cargo-DiatypePlusVariable.woff2") format("woff2-variations"); font-style: normal; font-weight: 200 1000; }
+
+@font-face { font-display: block; font-family: "Diatype Variable"; src: url("https://type.cargo.site/files/Cargo-DiatypePlusVariable.woff2") format("woff2-variations"); font-style: normal; font-weight: 200 1000; }
+
+@font-face { font-display: block; font-family: "Diatype Variable"; src: url("https://type.cargo.site/files/Cargo-DiatypePlusVariable.woff2") format("woff2-variations"); font-style: normal; font-weight: 200 1000; }
+
+@font-face { font-display: block; font-family: "Diatype Variable"; src: url("https://type.cargo.site/files/Cargo-DiatypePlusVariable.woff2") format("woff2-variations"); font-style: normal; font-weight: 200 1000; }
+
+@font-face { font-display: block; font-family: "Diatype Variable"; src: url("https://type.cargo.site/files/Cargo-DiatypePlusVariable.woff2") format("woff2-variations"); font-style: normal; font-weight: 200 1000; }
+
+@font-face { font-display: block; font-family: "Diatype Variable"; src: url("https://type.cargo.site/files/Cargo-DiatypePlusVariable.woff2") format("woff2-variations"); font-style: normal; font-weight: 200 1000; }
+
+@font-face { font-display: block; font-family: "Diatype Variable"; src: url("https://type.cargo.site/files/Cargo-DiatypePlusVariable-Italic.woff2") format("woff2-variations"); font-style: italic; font-weight: 200 1000; }
+
+@font-face { font-display: block; font-family: "Diatype Semi-Mono Variable"; src: url("https://type.cargo.site/files/Cargo-DiatypePlusVariable.woff2") format("woff2-variations"); font-style: normal; font-weight: 200 700; }
+
+@font-face { font-display: block; font-family: "Diatype Semi-Mono Variable"; src: url("https://type.cargo.site/files/Cargo-DiatypePlusVariable.woff2") format("woff2-variations"); font-style: normal; font-weight: 200 700; }
+
+@font-face { font-display: block; font-family: "Diatype Semi-Mono Variable"; src: url("https://type.cargo.site/files/Cargo-DiatypePlusVariable.woff2") format("woff2-variations"); font-style: normal; font-weight: 200 700; }
+
+@font-face { font-display: block; font-family: "Diatype Semi-Mono Variable"; src: url("https://type.cargo.site/files/Cargo-DiatypePlusVariable.woff2") format("woff2-variations"); font-style: normal; font-weight: 200 700; }
+
+@font-face { font-display: block; font-family: "Diatype Semi-Mono Variable"; src: url("https://type.cargo.site/files/Cargo-DiatypePlusVariable.woff2") format("woff2-variations"); font-style: normal; font-weight: 200 700; }
+
+@font-face { font-display: block; font-family: "Diatype Semi-Mono Variable"; src: url("https://type.cargo.site/files/Cargo-DiatypePlusVariable-Italic.woff2") format("woff2-variations"); font-style: italic; font-weight: 200 700; }
+
+@font-face { font-display: block; font-family: "Diatype Mono Variable"; src: url("https://type.cargo.site/files/Cargo-DiatypePlusVariable.woff2") format("woff2-variations"); font-style: normal; font-weight: 200 700; }
+
+@font-face { font-display: block; font-family: "Diatype Mono Variable"; src: url("https://type.cargo.site/files/Cargo-DiatypePlusVariable.woff2") format("woff2-variations"); font-style: normal; font-weight: 200 700; }
+
+@font-face { font-display: block; font-family: "Diatype Mono Variable"; src: url("https://type.cargo.site/files/Cargo-DiatypePlusVariable.woff2") format("woff2-variations"); font-style: normal; font-weight: 200 700; }
+
+@font-face { font-display: block; font-family: "Diatype Mono Variable"; src: url("https://type.cargo.site/files/Cargo-DiatypePlusVariable.woff2") format("woff2-variations"); font-style: normal; font-weight: 200 700; }
+
+@font-face { font-display: block; font-family: "Diatype Mono Variable"; src: url("https://type.cargo.site/files/Cargo-DiatypePlusVariable.woff2") format("woff2-variations"); font-style: normal; font-weight: 200 700; }
+
+@font-face { font-display: block; font-family: "Diatype Mono Variable"; src: url("https://type.cargo.site/files/Cargo-DiatypePlusVariable-Italic.woff2") format("woff2-variations"); font-style: italic; font-weight: 200 700; }

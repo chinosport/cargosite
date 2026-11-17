@@ -1,0 +1,414 @@
+.background {
+    --contact-form-color: rgba(0,0,0, 0.85);
+    --contact-form-background: #fff;
+    --contact-form-hr: rgba(0,0,0,.1);
+
+    --contact-form-button-cancel-bg: #e3e3e3;
+    --contact-form-button-cancel-color: #5d5d5d;
+    --contact-form-button-send-bg: #262626;
+    --contact-form-button-send-color: #fff;
+    --contact-form-placeholder-color: #999;
+
+    --contact-form-color-flat: rgba(255, 255, 255, 1);
+    --contact-form-color-flat-reverse: rgba(0, 0, 0, 1);
+    --contact-form-close-circle-opacity: .25;
+
+    --contact-form-border: 1px solid rgba(0,0,0,0);
+
+    position: fixed;
+    inset: 0;
+    background-color: var(--contact-form-overlay, rgba(0,0,0,.4));
+    z-index: 9996;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    /* transition values */
+    --x1: 0.260;
+    --y1: 0.270;
+    --x2: 0.380;
+    --y2: 0.925;
+    --enter: cubic-bezier(var(--x1), var(--y1), var(--x2), var(--y2));
+    /* Reversed transition values */
+    --x1-r: calc(1 - var(--x2));
+    --y1-r: calc(1 - var(--y2));
+    --x2-r: calc(1 - var(--x1));
+    --y2-r: calc(1 - var(--y1));
+    --exit: cubic-bezier(var(--x1-r), var(--y1-r), var(--x2-r), var(--y2-r));
+    transition: opacity 0.28s var(--enter); /* exit */
+}
+
+
+.dark.background {
+    --contact-form-color: rgba(255, 255, 255, .85);
+    --contact-form-background: #202020;
+    --contact-form-hr: rgba(255, 255, 255, .1);
+
+    --contact-form-button-cancel-bg: rgba(255, 255, 255, .1);
+    --contact-form-button-cancel-color: rgba(255, 255, 255, .7); 
+    --contact-form-button-send-bg: rgba(255, 255, 255, .85);
+    --contact-form-button-send-color: rgba(0, 0, 0, .85);
+    --contact-form-placeholder-color: #888;
+
+    --contact-form-border: 1px solid rgb(65, 65, 65, 1);
+
+    --contact-form-color-flat: rgba(0, 0, 0, .85);
+    --contact-form-color-flat-reverse: rgba(255, 255, 255, .85);
+    --contact-form-close-circle-opacity: .615;
+}
+
+.transitioning-theme * {
+    transition: all 0.5s ease;
+}
+
+.modal {
+    box-shadow: var(--contact-form-shadow, 4px 4px 40px rgba(0, 0, 0, 0.25));
+    z-index: 1000;
+    height: auto;
+    width: 30vw;
+    min-width: 410px;
+    height: 100%;
+    height: -webkit-fill-available;
+    height: fill-available;
+    max-height: 75vh;
+    border-radius: var(--windowRadiusLarge); 
+    opacity: 0;
+    transform-origin: bottom center;
+    transform: translateY(30px);
+    transition: opacity 0.28s var(--enter), transform 0.28s var(--enter); /* exit */
+}
+
+.modal.mobile {
+    width: calc(var(--contact-form-vw, 1vw) * 100);
+    max-width: calc(var(--contact-form-vw, 1vw) * 100);
+    min-width: calc(var(--contact-form-vw, 1vw) * 100);
+    height: unset; 
+    max-height: unset;
+    position: fixed;
+    top: 7.5vh;
+    bottom: 7.5vh;
+}
+
+.modal.mobile .modal-inner {
+    max-height: unset;
+}
+
+.background.active {
+    opacity: 1;
+    transition: opacity 0.28s var(--enter);
+}
+
+.modal.active {
+    transform: translateY(0);
+    opacity: 1;
+    transition: opacity 0.28s var(--enter), transform 0.28s var(--enter);
+}
+
+.modal.active.sent {
+    transform: translateY(-30px);
+    opacity: 0;
+    transition: opacity 0.28s var(--exit), transform 0.28s var(--exit);
+}
+
+.background.sent {
+    opacity: 0;
+    transition: opacity 0.28s var(--exit);
+}
+
+.modal .modal-inner {
+    overflow: scroll;
+    padding: 10px;
+    background-color: var(--contact-form-background);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    height: -webkit-fill-available;
+    height: fill-available;
+    max-height: 75vh;
+    border-radius: var(--windowRadiusLarge-inner);
+}
+
+/* dark vers. border */
+.modal .modal-inner::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    user-select: none;
+    border: var(--contact-form-border, 0);
+    border-radius: var(--windowRadiusLarge-inner);
+    transition: all 0.5s ease;
+}
+
+.modal .modal-inner .header {
+    position: relative;
+    display: grid;
+    place-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.modal .modal-inner .header .title {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+}
+
+.title::after {
+    content:  var(--contact-form-header, "Contact");
+    color: var(--contact-form-color-flat-reverse);
+}
+
+.modal .modal-inner .header .exit {
+    position: absolute;
+    right: 0;
+    line-height: 0;
+    cursor: pointer;
+}
+
+.modal .modal-inner .header .exit * {
+   pointer-events: none;
+   -webkit-touch-callout: none;
+   -webkit-user-select: none;
+   -khtml-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+}
+
+.modal .modal-inner .header .exit:active {
+    opacity: 0.7;
+}
+
+.modal .modal-inner hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+    border: 0;
+    border-top: 1px solid var(--contact-form-hr);
+    margin: 10px 0;
+}
+
+
+.modal .modal-inner .header + hr,
+.modal .modal-inner .email + hr {
+    margin-bottom: 0;
+}
+
+.modal .modal-inner .email + hr,
+.modal .modal-inner .text-area + hr {
+    margin-top: 0;
+}
+
+.email {
+    display: flex;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: var(--fontSize-default);
+    color: var(--contact-form-placeholder-color);
+    padding: 8px 0 10px 0;
+}
+
+.text-input {
+    position: relative;
+    background: var(--contact-form-background);
+    border: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.text-input input {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: var(--fontSize-default);
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 10px;
+    margin-top:0px;
+    margin-bottom:0px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: var(--contact-form-color);
+    background: var(--contact-form-background);
+}
+
+.text-input input:-webkit-autofill,
+.text-input input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px var(--contact-form-background) inset;
+    -webkit-text-fill-color: var(--contact-form-color);
+}
+
+.text-area {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.text-area textarea {
+    color: var(--contact-form-color);
+    background: var(--contact-form-background);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: var(--fontSize-default);
+    line-height: 1.4;
+    margin: 0;
+    padding: 10px 0 30px 0;
+    flex: 1;   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    resize: none;
+    border: none;
+    overflow: auto;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    scrollbar-width: none;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.text-area textarea::-webkit-scrollbar {
+    display: none;
+}
+
+.text-input input::placeholder,
+.text-area textarea::placeholder {
+    color: var(--contact-form-placeholder-color);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: var(--fontSize-default);
+}
+
+.text-input.error input,
+.text-input.error input::placeholder,
+.text-area.error input,
+.text-area.error textarea::placeholder {
+    color: #f00;
+}
+
+button {
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    cursor: pointer;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 14.5px;
+    padding: 0;
+    text-align: left;
+    white-space: nowrap;
+    background: transparent;
+    display: flex;
+    margin: 0;
+}
+
+button:active {
+    opacity: .7;
+}
+
+.button-area {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: auto;
+    grid-gap: 5px;
+    margin-left: auto;
+}
+
+.button-area button {
+    width: 130px;
+    justify-content: flex-start;
+    padding: 6.5px var(--ui-padding-default-horizontal) 7.5px 15px;
+    font-weight: 500;
+    flex: 1 1;
+    text-align: center;
+    height: auto;
+    min-height:28.5px;
+    max-height:28.5px;
+    line-height: 1;
+    border-radius: var(--ui-button-border-radius);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+}
+
+button.cancel {
+    background: var(--contact-form-button-cancel-bg);
+    color: var(--contact-form-button-cancel-color);
+}
+
+button.send {
+    position:relative;
+    
+    background: var(--contact-form-button-send-bg);
+    color: var(--contact-form-button-send-color);
+    padding-right: 5px;
+}
+
+button.send .loader {
+    display: flex;
+    height: 18px;
+}
+
+button.send .loader svg {
+    width: 18px;
+    height: 18px;
+}
+
+
+/* PROCESSING ANIMATION */
+div.caution-processing {
+    --processing-opacity: 0.08;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    background-size: 60px 60px;
+    background-image: linear-gradient( 
+        45deg, 
+        rgba(255, 255, 255, var(--processing-opacity)) 25%,
+        transparent 25%, 
+        transparent 50%, 
+        rgba(255, 255, 255, var(--processing-opacity)) 50%, 
+        rgba(255, 255, 255, var(--processing-opacity)) 75%, 
+        transparent 75%, 
+        transparent);
+    animation: barberpole 1.2s linear infinite;
+    border-radius: var(--ui-button-border-radius);
+}
+
+.dark div.caution-processing {
+    --processing-dark-opacity: 0.055;
+    background-image: linear-gradient( 
+        45deg, 
+        rgba(0, 0, 0, var(--processing-dark-opacity)) 25%,
+        transparent 25%, 
+        transparent 50%, 
+        rgba(0, 0, 0, var(--processing-dark-opacity)) 50%, 
+        rgba(0, 0, 0, var(--processing-dark-opacity)) 75%, 
+        transparent 75%, 
+        transparent);
+}
+
+
+@keyframes barberpole {
+  from { background-position: 120px 60px; }
+  to   { background-position: 0 0; }
+}
+
+
+
